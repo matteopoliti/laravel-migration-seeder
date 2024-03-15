@@ -10,7 +10,18 @@ class PageController extends Controller
 {
     public function index()
     {
-        $trains = Train::all();
-        return view('welcome', compact('trains'));
+        $table_titles = [
+            'Azienda',
+            'Stazione di partenza',
+            'Stazione di arrivo',
+            'Orario di partenza',
+            'Orario di arrivo',
+            'Codice Treno',
+            'Numero Carrozze',
+            'In orario',
+            'Cancellato'
+        ];
+        $trains = Train::where('departure_time', '=', '20:36:18')->get();
+        return view('welcome', compact('trains', 'table_titles'));
     }
 }

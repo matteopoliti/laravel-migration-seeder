@@ -22,6 +22,7 @@ class TrainsTableSeeder extends Seeder
             $newtrain->carriages = $faker->numberBetween(2, 15);
             $newtrain->on_time = $faker->boolean();
             $newtrain->cancelled = $faker->boolean();
+            $newtrain->save();
         }
     }
 }
