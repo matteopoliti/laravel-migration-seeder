@@ -9,19 +9,15 @@
 
     @vite('resources/js/app.js')
 
-    @yield('style')
 </head>
 
 <body>
-    <header>
-        @include('components.header')
-    </header>
 
-    <main>
-        <div>
-            @yield('content')
-        </div>
-    </main>
+    @include('components.header')
+
+
+    @yield('content')
+
 </body>
 
 </html>
