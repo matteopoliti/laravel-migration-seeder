@@ -21,7 +21,7 @@ class PageController extends Controller
             'In orario',
             'Cancellato'
         ];
-        $trains = Train::where('departure_time', '=', '20:36:18')->get();
+        $trains = Train::where('departure_time', '>', today())->get();
         return view('welcome', compact('trains', 'table_titles'));
     }
 }
